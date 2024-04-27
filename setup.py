@@ -8,20 +8,21 @@ install_require = []
 if os.name == 'nt':
     install_require.append('windows-curses')
 
-VERSION = '0.0.1'
+VERSION = '0.0.3'
 DESCRIPTION = 'A simple terminal-based typing test'
 
 setup(
-    name="typeterminal",
+    name="terminaltype",
     version=VERSION,
     author="Ramiro Cabral",
     author_email="<ramiro.cabral@alu.ing.unlp.edu.ar>",
-    url="https://github.com/ramirocabral/typingtest",
+    url="https://github.com/ramirocabral/terminaltype",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     keywords=['python', 'typing', 'test', 'game', 'curses'],
+    package_data={'terminaltype': ['words/*']},
     install_requires=install_require,
     extras_require={
         'dev': ["twine>=4.0.2"]
@@ -37,7 +38,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "typeterminal=typeterminal.app:App",
+            "terminaltype=terminaltype.app:TypingTest",
         ],
     },
 
